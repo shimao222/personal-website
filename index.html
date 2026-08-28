@@ -240,7 +240,13 @@ footer{padding:30px 0 50px;display:flex;justify-content:space-between;gap:14px;c
 	  .lightbox-nav.prev{left:6px}
 	  .lightbox-nav.next{right:6px}
 	}
-</style>
+@media(max-width:820px){
+       .card-spread-section{min-height:auto;padding:10px 0}
+       .card-spread{height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0 10px}
+       .spread-card{position:relative;width:100%;height:auto;aspect-ratio:4/3;border-radius:10px;transform:none!important;z-index:auto!important}
+       .spread-card .card-label{opacity:1;font-size:10px;padding:8px 10px}
+       @media(max-width:460px){.card-spread{grid-template-columns:1fr}}
+}</style>
 </head>
 <body>
 
@@ -800,7 +806,13 @@ footer{padding:30px 0 50px;display:flex;justify-content:space-between;gap:14px;c
 .fm-cover em{font-size:26px;font-weight:800;font-style:normal;letter-spacing:.05em}
 .fm-cover small{font-size:12px;opacity:.9}
 .pm-audio{margin-top:12px}.pm-audio audio{width:100%;display:block;background:#0b0f17;border-radius:10px}.pm-now{color:#9aa4b5;font-size:12px;margin-top:6px}.pm-track .btn.play.sel{background:#4ade80;outline:2px solid #4ade80;outline-offset:1px}
-</style>
+@media(max-width:820px){
+       .card-spread-section{min-height:auto;padding:10px 0}
+       .card-spread{height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0 10px}
+       .spread-card{position:relative;width:100%;height:auto;aspect-ratio:4/3;border-radius:10px;transform:none!important;z-index:auto!important}
+       .spread-card .card-label{opacity:1;font-size:10px;padding:8px 10px}
+       @media(max-width:460px){.card-spread{grid-template-columns:1fr}}
+}</style>
 <div id="playerModal" aria-hidden="true">
   <div class="pm-box">
     <div class="pm-top"><span class="t">原创 AI 音乐 · 在线试听</span><button type="button" class="gm-x" id="pmClose">&#10005;</button></div>

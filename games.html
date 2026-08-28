@@ -66,7 +66,7 @@
         <span class="en">SKY RAIDEN</span>
         <h2>深空突袭</h2>
         <p class="desc">太空飞行射击。鼠标移动飞行、自动开火，滚轮/右键切换武器，过关闯无尽。</p>
-        <a class="gobtn" href="https://genuine-basbousa-ffe5c6.netlify.app" data-name="深空突袭">去玩</a>
+        <a class="gobtn" href="https://genuine-basbousa-ffe5c6.netlify.app" data-name="深空突袭" data-inline="1">去玩</a>
       </div>
     </div>
 
@@ -76,12 +76,12 @@
         <span class="en">WAVEPEAK · TANK BATTLE</span>
         <h2>坦克大战</h2>
         <p class="desc">科技风坦克对战，支持单人闯关与多人对战，还有排行榜、战车改装与成就系统。</p>
-        <a class="gobtn" href="https://tranquil-fudge-ce404c.netlify.app" data-name="坦克大战">去玩</a>
+        <a class="gobtn" href="https://tranquil-fudge-ce404c.netlify.app" target="_blank" rel="noopener" data-name="坦克大战">去玩</a>
       </div>
     </div>
   </div>
 
-  <p class="tips">提示：点「去玩」会在本页面以全屏方式打开游戏，游戏画面顶部有「返回」按钮，可随时回到个人网站。若看不到游戏画面，请改用新窗口打开。</p>
+  <p class="tips">提示：点「去玩」即可开玩。深空突袭在本页全屏内嵌，顶部有「返回」按钮；坦克大战会新开窗口进入（不支持页内嵌入，属正常），关闭或切回本页点「← 返回作品集」即可回到个人网站。</p>
 </div>
 
 <div class="game-modal" id="gameModal" hidden>
@@ -102,7 +102,7 @@
       gframe=document.getElementById('gameIframe'),
       gback=document.getElementById('gameBack'),
       gtitle=document.getElementById('gameTitle');
-  document.querySelectorAll('.gobtn').forEach(function(btn){
+  document.querySelectorAll('.gobtn[data-inline]').forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.preventDefault();
       gframe.src = btn.getAttribute('href');
