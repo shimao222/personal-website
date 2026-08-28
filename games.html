@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的 AI 小游戏集 · 浪尖儿</title>
+<style>
+  :root{
+    --paper:#faf8f2; --card:rgba(255,255,255,.82); --ink:#1a1814; --inks:#6b6358;
+    --line:#dcd5c8; --acc:#4ade80; --accs:#16a34a; --accc:#0d9488;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"PingFang SC","SF Pro Text","Noto Sans SC","Microsoft YaHei",sans-serif;
+       min-height:100vh;display:flex;flex-direction:column;}
+  .wrap{max-width:820px;margin:0 auto;padding:34px 22px 60px;width:100%}
+  .back{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border:1px solid var(--line);
+        border-radius:999px;background:var(--card);color:var(--inks);font-size:13px;font-weight:700;
+        cursor:pointer;transition:all .25s}
+  .back:hover{color:var(--ink);border-color:var(--accs);transform:translateY(-2px)}
+  .hero{margin:30px 0 8px}
+  .eyebrow{color:var(--accs);font-size:12px;font-weight:800;letter-spacing:.14em}
+  .eyebrow::before{content:"";display:inline-block;width:20px;height:2px;background:var(--accs);margin-right:8px;vertical-align:middle}
+  h1{font-size:clamp(1.6rem,4vw,2.2rem);letter-spacing:-.03em;margin-top:10px;line-height:1.15}
+  .sub{color:var(--inks);margin-top:10px;font-size:14px;line-height:1.7}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden;
+        box-shadow:0 16px 40px rgba(20,16,8,.08);transition:transform .3s,border-color .3s,box-shadow .3s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-5px);border-color:var(--accs)}
+  .thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:46px}
+  .g1{background:linear-gradient(135deg,#0f172a,#1e3a4d,#0ea5e9)}
+  .g2{background:linear-gradient(135deg,#14532d,#0f766e,#22c55e)}
+  .body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  h2{font-size:18px;letter-spacing:-.02em}
+  .en{color:var(--accs);font:800 11px/1 ui-monospace,monospace;letter-spacing:.12em}
+  .desc{color:var(--inks);font-size:12.5px;line-height:1.6}
+  .gobtn{margin-top:auto;padding:10px 14px;border-radius:999px;border:1px solid var(--accs);background:var(--ink);
+         color:var(--paper);font-size:13px;font-weight:800;text-align:center;text-decoration:none;transition:all .25s}
+  .gobtn:hover{background:var(--accs);color:#fff}
+  .tips{margin-top:24px;color:var(--inks);font-size:12px;line-height:1.7}
+  .game-modal{position:fixed;inset:0;z-index:2000;background:#0a0d12;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .25s}
+  .game-modal.on{opacity:1;pointer-events:auto}
+  .gm-bar{flex:none;height:54px;display:flex;align-items:center;gap:14px;padding:0 16px;background:#0f1419;border-bottom:1px solid #1f2733}
+  .gm-back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border:none;border-radius:999px;
+           background:#4ade80;color:#062;font:800 13px/1 "PingFang SC","Microsoft YaHei",sans-serif;cursor:pointer;transition:all .25s}
+  .gm-back:hover{background:#5eead4;transform:translateY(-1px)}
+  .gm-title{color:#9aa4b5;font-size:13px;font-weight:700}
+  .gm-frame{flex:1;width:100%;border:0;background:#000}
+  @media(max-width:640px){.cards{grid-template-columns:1fr}.gm-title{max-width:18ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <button class="back" id="BackBtn">← 返回作品集</button>
+
+  <div class="hero">
+    <div class="eyebrow">浪尖儿 · 精选作品</div>
+    <h1>我的 AI 小游戏</h1>
+    <p class="sub">用 AI 一起做出来的两款可玩小游戏，点「去玩」在浏览器里直接开玩。</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="thumb g1">🚀</div>
+      <div class="body">
+        <span class="en">SKY RAIDEN</span>
+        <h2>深空突袭</h2>
+        <p class="desc">太空飞行射击。鼠标移动飞行、自动开火，滚轮/右键切换武器，过关闯无尽。</p>
+        <a class="gobtn" href="https://genuine-basbousa-ffe5c6.netlify.app" data-name="深空突袭">去玩</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="thumb g2">🛡️</div>
+      <div class="body">
+        <span class="en">WAVEPEAK · TANK BATTLE</span>
+        <h2>坦克大战</h2>
+        <p class="desc">科技风坦克对战，支持单人闯关与多人对战，还有排行榜、战车改装与成就系统。</p>
+        <a class="gobtn" href="https://tranquil-fudge-ce404c.netlify.app" data-name="坦克大战">去玩</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="tips">提示：点「去玩」会在本页面以全屏方式打开游戏，游戏画面顶部有「返回」按钮，可随时回到个人网站。若看不到游戏画面，请改用新窗口打开。</p>
+</div>
+
+<div class="game-modal" id="gameModal" hidden>
+  <div class="gm-bar">
+    <button class="gm-back" id="gameBack">← 返回</button>
+    <span class="gm-title" id="gameTitle"></span>
+  </div>
+  <iframe class="gm-frame" id="gameIframe" allow="fullscreen;autoplay" frameborder="0" title="游戏窗口"></iframe>
+</div>
+<script>
+  var backToHome = function(){
+    if (window.history.length > 1) { window.history.back(); }
+    else { window.location.href = './index.html'; }
+  };
+  document.getElementById('BackBtn').addEventListener('click', backToHome);
+
+  var gmodal=document.getElementById('gameModal'),
+      gframe=document.getElementById('gameIframe'),
+      gback=document.getElementById('gameBack'),
+      gtitle=document.getElementById('gameTitle');
+  document.querySelectorAll('.gobtn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      gframe.src = btn.getAttribute('href');
+      gtitle.textContent = btn.getAttribute('data-name') || '游戏';
+      gmodal.hidden = false;
+      requestAnimationFrame(function(){ gmodal.classList.add('on'); });
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  gback.addEventListener('click', function(){
+    gmodal.classList.remove('on');
+    setTimeout(function(){ gmodal.hidden = true; gframe.src = ''; document.body.style.overflow=''; }, 250);
+    backToHome();
+  });
+</script>
+</body>
+</html>

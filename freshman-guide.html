@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>福建师范大学心理学院 · 2026级新生入学指南</title>
+<style>
+  :root{
+    --g1:#14432b;--g2:#1a5c3a;--g3:#2d8659;--g4:#3aa06c;
+    --cream:#f7f5ef;--card:#ffffff;--line:#e8e3d8;
+    --ink:#1f2937;--sub:#6b7280;--dim:#9aa1a8;
+    --gold:#c9a14a;--gold-soft:#fbf3e2;
+    --blue:#2563eb;--blue-soft:#eef4ff;
+    --red:#dc2626;--red-soft:#fdeeee;
+    --amber:#b45309;--amber-soft:#fef6e7;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Segoe UI","Microsoft YaHei","PingFang SC","Source Han Sans SC",system-ui,sans-serif;
+    line-height:1.72;font-size:15px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px 90px}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;overflow:hidden;margin:0 -20px 0;
+    background:radial-gradient(1200px 500px at 85% -10%, rgba(201,161,74,.25), transparent 60%),
+               radial-gradient(900px 500px at -10% 110%, rgba(74,222,128,.18), transparent 55%),
+               linear-gradient(135deg,var(--g1) 0%,var(--g2) 45%,var(--g3) 100%);
+    color:#fff;padding:60px 28px 52px;border-radius:0 0 30px 30px}
+  .hero .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:5px 14px;font-size:12.5px;letter-spacing:1px}
+  .hero h1{font-size:34px;margin:20px 0 10px;line-height:1.25;font-weight:800;letter-spacing:1px}
+  .hero h1 .gold{color:var(--gold)}
+  .hero .sub{font-size:15px;opacity:.92;max-width:720px;margin:0;line-height:1.8}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;font-size:13px}
+  .hero .meta span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:4px 12px}
+
+  /* 数据条 */
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:-30px 0 30px;position:relative;z-index:5}
+  @media(max-width:820px){.stats{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:520px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 12px;text-align:center;
+    box-shadow:0 4px 16px rgba(20,67,43,.06)}
+  .stat b{display:block;font-size:27px;font-weight:800;color:var(--g2);line-height:1.15}
+  .stat span{font-size:12px;color:var(--sub)}
+
+  /* 导航 */
+  nav.toc{position:sticky;top:0;z-index:40;background:rgba(247,245,239,.96);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:10px 0;margin:0 0 26px;display:flex;flex-wrap:wrap;gap:6px}
+  nav.toc a{color:var(--sub);text-decoration:none;font-size:12.5px;padding:6px 12px;border-radius:999px;
+    white-space:nowrap;background:var(--card);border:1px solid var(--line);transition:.15s}
+  nav.toc a:hover{color:var(--g2);border-color:var(--g3);background:#eef6f1}
+  nav.toc a.hot{color:#fff;background:var(--g2);border-color:var(--g2)}
+
+  /* 宫格导航 */
+  .grid-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 30px}
+  @media(max-width:820px){.grid-nav{grid-template-columns:repeat(2,1fr)}}
+  .gnav{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 14px;text-align:center;
+    text-decoration:none;color:var(--ink);box-shadow:0 2px 10px rgba(20,67,43,.04);transition:.18s}
+  .gnav:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(20,67,43,.1);border-color:var(--g3)}
+  .gnav .ico{width:52px;height:52px;margin:0 auto 10px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:var(--green3)}
+  .gnav b{display:block;font-size:15px;color:var(--ink)}
+  .gnav span{font-size:12px;color:var(--sub)}
+
+  /* 板块 */
+  section{margin-bottom:26px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 26px 20px;box-shadow:0 2px 10px rgba(20,67,43,.04)}
+  .sec-head{display:flex;align-items:center;gap:13px;margin-bottom:4px;padding-bottom:14px;border-bottom:2px solid var(--cream)}
+  .sec-ico{flex:0 0 auto;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;background:var(--green3)}
+  .sec-head h2{margin:0;font-size:20px;color:var(--g2);font-weight:700}
+  .sec-head .en{font-size:11px;color:var(--dim);letter-spacing:2px;margin-left:auto;text-transform:uppercase}
+
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 4px}
+  .chip{background:#eef6f1;color:var(--g2);font-size:12.5px;font-weight:600;padding:3px 11px;border-radius:999px;border:1px solid #d5e7dc}
+
+  /* 链接卡片 */
+  .links{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:10px 0}
+  @media(max-width:720px){.links{grid-template-columns:1fr}}
+  .lcard{display:flex;align-items:center;gap:10px;background:#faf8f3;border:1px solid var(--line);border-radius:11px;
+    padding:10px 13px;text-decoration:none;color:var(--ink);transition:.15s}
+  .lcard:hover{border-color:var(--g3);background:#eef6f1}
+  .lcard .doc{flex:0 0 auto;width:34px;height:34px;border-radius:8px;background:var(--green3);display:flex;align-items:center;justify-content:center;font-size:16px}
+  .lcard .fn{font-size:13px;font-weight:600;color:var(--g2);line-height:1.3}
+  .lcard .fu{font-size:10.5px;color:var(--dim);word-break:break-all}
+
+  .ai{border:1px solid #c9d9f5;border-left:4px solid var(--blue);background:var(--blue-soft);border-radius:12px;padding:12px 15px;margin:12px 0}
+  .ai .tag{font-size:11.5px;font-weight:700;color:var(--blue);letter-spacing:1px;display:block;margin-bottom:3px}
+  .ai .c{font-size:14px}
+  .ai .c b{color:var(--blue)}
+
+  .under{border:1px solid #e3d2a5;border-left:4px solid var(--gold);background:var(--gold-soft);border-radius:12px;padding:12px 15px;margin:12px 0}
+  .under .tag{font-size:11.5px;font-weight:700;color:var(--amber);letter-spacing:1px;display:block;margin-bottom:3px}
+  .under .c{font-size:14px}
+  .under .c b{color:var(--amber)}
+  .under .src{display:block;font-size:11px;color:var(--dim);margin-top:4px}
+
+  .pit{border:1px solid #f0c4c4;border-left:4px solid var(--red);background:var(--red-soft);border-radius:12px;padding:12px 15px;margin:12px 0}
+  .pit .tag{font-size:11.5px;font-weight:700;color:var(--red);letter-spacing:1px;display:block;margin-bottom:3px}
+  .pit .c{font-size:14px}
+  .pit .c b{color:var(--red)}
+
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13.3px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+  th{background:#eef6f1;color:var(--g2);font-weight:700;white-space:nowrap}
+  tr:nth-child(even) td{background:#fbfaf6}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  .mini{background:#faf8f3;border:1px solid var(--line);border-radius:13px;padding:15px 17px}
+  .mini h4{margin:0 0 7px;color:var(--g2);font-size:15px}
+  .mini ul{margin:0;padding-left:18px;font-size:13.5px}
+  .mini li{margin:4px 0}
+
+  .chat{margin:12px 0}
+  .msg{display:flex;margin:10px 0}
+  .msg .ava{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;background:var(--green3);margin-right:10px}
+  .msg .bub{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 14px;max-width:80%;font-size:13.8px}
+  .msg.q{justify-content:flex-end}
+  .msg.q .ava{margin:0 0 0 10px;background:#eef4ff}
+  .msg.q .bub{background:var(--blue-soft);border-color:#c9d9f5}
+
+  .footnote{font-size:12px;color:var(--dim);margin-top:16px;text-align:center;line-height:1.7}
+
+  /* 返回作品集按钮 */
+  .backhome{position:fixed;left:22px;bottom:26px;z-index:60;display:inline-flex;align-items:center;gap:7px;
+    padding:11px 18px;border:none;border-radius:999px;cursor:pointer;
+    background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;
+    font:700 14px/1 "Microsoft YaHei","PingFang SC",sans-serif;
+    box-shadow:0 8px 24px rgba(20,67,43,.28);transition:transform .2s,box-shadow .2s}
+  .backhome:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,67,43,.36)}
+  @media(max-width:520px){.backhome{left:14px;bottom:16px;padding:10px 15px;font-size:13px}}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="tag">🎓 福建师范大学 · 心理学院 · 2026级新生</div>
+    <h1>新生入学指南<br><span class="gold">把官网文件翻译成人话，把水下信息摊开讲</span></h1>
+    <p class="sub">这不是一份链接堆砌，而是一份「读懂每一份官方文件」的 AI 解读指南：专有名词翻译、容易疏忽的条款、以及没人明说但你该知道的"水下信息"。所有内容均来自学校官网原文，逐条标注依据。</p>
+    <div class="meta">
+      <span>📍 旗山校区</span><span>📅 9月5日报到</span><span>🏛️ 建校1907年（120周年）</span>
+      <span>🥇 国家级一流专业</span><span>🔬 16+间实验室</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+  <!-- 数据条 -->
+  <div class="stats">
+    <div class="stat"><b>1907</b><span>建校年份</span></div>
+    <div class="stat"><b>国家级</b><span>心理学一流专业</span></div>
+    <div class="stat"><b>5门</b><span>国家级一流课程</span></div>
+    <div class="stat"><b>45人</b><span>专任教师（博士89%）</span></div>
+    <div class="stat"><b>16+间</b><span>实验室</span></div>
+  </div>
+
+  <nav class="toc">
+    <a href="#s1">🏫 入学准备</a><a href="#s2">🛒 购物清单</a><a href="#s3">🛏️ 宿舍生活</a><a href="#s4">🎖️ 军训</a>
+    <a href="#s5" class="hot">📜 学校规则</a><a href="#s6">🎓 绩点选课</a><a href="#s7">🔁 转专业</a><a href="#s8" class="hot">🎯 保研</a>
+    <a href="#s9">💰 奖学金</a><a href="#s10">🏆 竞赛证书</a><a href="#s11" class="hot">🔬 实验室导师</a><a href="#s12">📚 图书馆</a>
+    <a href="#s13">💳 财务处</a><a href="#s14">🌐 网络中心</a><a href="#s15">💼 就业</a><a href="#s16">⚖️ 信息公开</a>
+    <a href="#s17" class="hot">⭐ 优秀学生</a><a href="#s18">💬 问答</a><a href="#s19">🕳️ 避坑</a>
+  </nav>
+
+  <!-- 宫格导航 -->
+  <div class="grid-nav">
+    <a class="gnav" href="#s1"><div class="ico">🏫</div><b>入学准备</b><span>证件·缴费·户口</span></a>
+    <a class="gnav" href="#s2"><div class="ico">🛒</div><b>购物清单</b><span>该买什么别买什么</span></a>
+    <a class="gnav" href="#s3"><div class="ico">🛏️</div><b>宿舍生活</b><span>宿舍·食堂·交通</span></a>
+    <a class="gnav" href="#s5"><div class="ico">📜</div><b>学校规则</b><span>校规校纪红线</span></a>
+    <a class="gnav" href="#s6"><div class="ico">🎓</div><b>绩点选课</b><span>GPA·金课·培养方案</span></a>
+    <a class="gnav" href="#s8"><div class="ico">🎯</div><b>保研推免</b><span>条件·通道·水下</span></a>
+    <a class="gnav" href="#s11"><div class="ico">🔬</div><b>实验室导师</b><span>科研·入所培养</span></a>
+    <a class="gnav" href="#s17"><div class="ico">⭐</div><b>优秀学生</b><span>往届真实画像</span></a>
+  </div>
+
+  <!-- 1 入学 -->
+  <section id="s1" class="card">
+    <div class="sec-head"><div class="sec-ico">🏫</div><h2>入学准备</h2><span class="en">Admission</span></div>
+    <div class="chips"><span class="chip">9月5日报到·旗山校区</span><span class="chip">学费5460元/年</span><span class="chip">住宿870-1500元/年</span><span class="chip">红底照8张</span></div>
+    <div class="links">
+      <a class="lcard" href="https://zsb.fjnu.edu.cn/" target="_blank"><div class="doc">📄</div><div><div class="fn">招生网首页</div><div class="fu">zsb.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://zsb.fjnu.edu.cn/xzzx/list.htm" target="_blank"><div class="doc">📥</div><div><div class="fn">下载中心</div><div class="fu">zsb.fjnu.edu.cn/xzzx</div></div></a>
+    </div>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c"><b>"个人档案"</b>=高中纸质学籍档案，<b>绝对别拆封</b>，拆了作废；<b>"党团关系"</b>团员走"智慧团建"、党员走"党员e家"；红底照8张要拍够，学生证/表格/社团/评奖都要用，再备白底+电子版。</div></div>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">学号<b>8月15日后</b>才能在福Star查到，查了才能缴费；缴费窗口<b>8月15–9月4日</b>；省内户口<b>不迁</b>，省外迁了在校期间<b>不能再迁出</b>。<span class="src">依据：入学须知原文</span></div></div>
+  </section>
+
+  <!-- 2 购物清单 -->
+  <section id="s2" class="card">
+    <div class="sec-head"><div class="sec-ico">🛒</div><h2>新生购物清单</h2><span class="en">Checklist</span></div>
+    <div class="grid2">
+      <div class="mini"><h4>✅ 要买/要带</h4><ul>
+        <li><b>证件</b>：录取通知书、身份证+复印件4-6份、准考证、档案袋、团员证/团籍、照片（红底8张+电子版）、户口本复印件、18岁男生兵役登记</li>
+        <li><b>床上</b>：床垫/床单被套（<b>床0.9×2m</b>）、被子、枕头、<b>蚊帐+床帘</b></li>
+        <li><b>生活</b>：排插（带USB）、<b>除湿袋</b>（福州湿气）、小风扇、衣架、收纳盒、锁</li>
+        <li><b>军训</b>：高倍防晒、鞋垫、1.5L水杯、藿香正气水、润喉糖、深色袜、针线包</li>
+        <li><b>药品</b>：常用药、创可贴</li>
+      </ul></div>
+      <div class="mini"><h4>❌ 别买/别带</h4><ul>
+        <li>厚重被褥（可买配送到寝）</li>
+        <li><b>大功率电器</b>（电磁炉/电热毯/冰箱，查到<b>没收+处分</b>）</li>
+        <li>超多衣服杂物（收纳空间有限）</li>
+        <li>全新教材（收<b>二手</b>，省几百块）</li>
+      </ul></div>
+    </div>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">网上<b>花钱选床位/选楼栋全是骗局</b>；开学<b>上门推销被子/电话卡/网课一律拒绝</b>；大件行李报到前2-3天寄出。</div></div>
+  </section>
+
+  <!-- 3 宿舍生活 -->
+  <section id="s3" class="card">
+    <div class="sec-head"><div class="sec-ico">🛏️</div><h2>宿舍 & 生活</h2><span class="en">Campus Life</span></div>
+    <div class="chips"><span class="chip">4-6人间·空调独卫热水</span><span class="chip">床0.9×2m</span><span class="chip">门禁22:30/23:00</span><span class="chip">限功率800W</span></div>
+    <div class="grid2">
+      <div class="mini"><h4>宿舍实况</h4><ul><li>旗山大一多住<b>桂苑六人间</b>，大一下组队换四人间上床下桌</li><li>共享洗衣机、阳台、独卫</li><li>不断电不断网；限800W</li></ul></div>
+      <div class="mini"><h4>食堂（"福建吃饭大学"，按宿舍区）</h4><ul>
+        <li><b>翠竹园</b>（桂苑旁）：星空网红餐厅，17个窗口——<b>大一心理学住桂苑，这是日常首选</b></li>
+        <li><b>桃李园/嘉树园</b>（桃苑）：荔枝肉、土豆炖鸭、5元学生餐</li>
+        <li><b>花香园/百草园</b>（榕苑）：离教学楼最近，麻辣香锅/沙茶面/咖喱饭</li>
+        <li><b>千叶园</b>（文化街）：日韩料理+披萨+<b>福建首家校内KFC</b></li>
+        <li><b>随园/展园</b>（南区兰苑）：展园"别人的食堂"，灌汤包/麻辣烫/冰粉</li>
+      </ul></div>
+    </div>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c">快递地址：福建省福州市闽侯县上街镇乌龙江中大道18号+XX苑X栋+姓名电话；地铁2号线<b>"董屿·福建师大站"</b>就在校门口。食堂一顿一荤一素约7-10元，肉4-5元/份。</div></div>
+    <div class="pit"><span class="tag">🕳️ 学生真实吐槽</span><div class="c">① "福建停水停电就不停课大学"——大一间歇性停水停电（尤其水管爆）常见；② 校内<b>电动车巨多、超级堵</b>；③ <b>南北区差异大</b>：南区除两个食堂几乎啥都没有，小吃街/超市都在北区；④ "形式主义比较多"（部分校友评价）。</div></div>
+  </section>
+
+  <!-- 4 军训 -->
+  <section id="s4" class="card">
+    <div class="sec-head"><div class="sec-ico">🎖️</div><h2>军训</h2><span class="en">Military Training</span></div>
+    <div class="chips"><span class="chip">约9.7–9.30</span><span class="chip">校内运动场</span></div>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c">福州9月太阳毒，<b>防晒随时补涂</b>；军训服提前试穿不合适立刻换；带大号水杯；军鞋底薄配鞋垫；雨天可能转室内。</div></div>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">不宜军训可凭校医院证明<b>申请免训</b>，但<b>理论部分不能免修</b>（否则拿不到学分）；军训成绩影响综测。</div></div>
+  </section>
+
+  <!-- 5 学校规则 -->
+  <section id="s5" class="card">
+    <div class="sec-head"><div class="sec-ico">📜</div><h2>学校规则（新生最容易踩的雷）</h2><span class="en">Rules</span></div>
+    <div class="links">
+      <a class="lcard" href="https://iccs.fjnu.edu.cn/a2/dd/c6576a172765/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">学生纪律处分规定（修订）</div><div class="fu">iccs.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://jsjyxy.fjnu.edu.cn/95/d7/c16442a366039/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">学生宿舍管理规定</div><div class="fu">jsjyxy.fjnu.edu.cn</div></div></a>
+    </div>
+    <table>
+      <tr><th>规则</th><th>红线 / 后果</th></tr>
+      <tr><td><b>旷课</b></td><td>一学期累计<b>&lt;30学时→警告/严重警告；30-60→记过/留校察看；≥60→开除学籍</b></td></tr>
+      <tr><td><b>考试作弊</b></td><td>作弊→<b>留校察看以上</b>；组织作弊/代考/卖答案→<b>开除学籍</b></td></tr>
+      <tr><td><b>学术不端</b></td><td>剽窃抄袭/伪造数据/买卖论文→严重警告以上，学位论文→记过以上</td></tr>
+      <tr><td><b>违禁电器</b></td><td>电磁炉/电热毯/冰箱→警告以上记过以下，<b>取消当年评优</b>；引起火灾→留校察看</td></tr>
+      <tr><td><b>夜不归宿</b></td><td>警告；擅自外租→记过以上</td></tr>
+      <tr><td><b>留宿异性</b></td><td>留校察看以上</td></tr>
+      <tr><td><b>养宠物</b></td><td>警告/严重警告</td></tr>
+    </table>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c">处分5档：警告、严重警告、记过、留校察看、开除学籍。警告/严重警告期6个月、记过12个月、留校察看12个月，<b>期满自动解除，解除后不影响评奖评优</b>。</div></div>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">① 违禁电器是<b>一票否决</b>（取消评优+影响入党）；② 旷课按学时<b>累计</b>，别以为"偶尔逃一次没事"；③ 处分<b>归入档案</b>，考公/求职/保研都看得到。</div></div>
+  </section>
+
+  <!-- 6 绩点选课 -->
+  <section id="s6" class="card">
+    <div class="sec-head"><div class="sec-ico">🎓</div><h2>绩点 & 选课 & 培养方案</h2><span class="en">GPA</span></div>
+    <div class="chips"><span class="chip">60分=1.0绩点</span><span class="chip">100分=5.0</span><span class="chip">平均绩点=总绩点÷总学分</span></div>
+    <div class="links">
+      <a class="lcard" href="https://jsjyxy.fjnu.edu.cn/_upload/article/files/80/0b/c722888845c79968cd0f1c964768/40e6b2b9-63f3-4c78-885b-3c6808b25237.pdf" target="_blank"><div class="doc">📥</div><div><div class="fn">学籍学历管理细则（官方PDF）</div><div class="fu">点击下载原文</div></div></a>
+      <a class="lcard" href="https://jwc.fjnu.edu.cn/tzgg_9107/list.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">教务处通知公告</div><div class="fu">jwc.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://jwglxt.fjnu.edu.cn/" target="_blank"><div class="doc">🖥️</div><div><div class="fn">新版教务系统</div><div class="fu">jwglxt.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="http://fjnu.fanya.chaoxing.com/portal" target="_blank"><div class="doc">📚</div><div><div class="fn">教学云平台（超星）</div><div class="fu">fjnu.fanya.chaoxing.com</div></div></a>
+    </div>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c">绩点决定<b>分流、评奖、保研、转专业</b>。心理学"金课"：《<b>心理统计与SPSS</b>》（孟迎芳）、《<b>发展与教育心理学</b>》（连榕）——本专业命门。</div></div>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">① <b>绩点3.0=免听/免修/提前修读</b>特权；② 挂科红线：补考后仍不及格&gt;1/3→<b>学业预警通知家长</b>，&gt;1/2→<b>劝退</b>；③ <b>体测不达标→结业拿不到毕业证</b>；④ 补考重修成绩会<b>标注</b>，推免评优按60分算。</div></div>
+    <div class="pit"><span class="tag">🕳️ 坑</span><div class="c">缺课超1/3直接禁考；通识选修选了不能退改；四六级/雅思达标可<b>免修大学英语</b>。</div></div>
+  </section>
+
+  <!-- 7 转专业 -->
+  <section id="s7" class="card">
+    <div class="sec-head"><div class="sec-ico">🔁</div><h2>转专业 & 专业分流</h2><span class="en">Major</span></div>
+    <div class="chips"><span class="chip">大一下/大二下各1次</span><span class="chip">转入≤15%</span></div>
+    <div class="links">
+      <a class="lcard" href="http://jwc.fjnu.edu.cn/a8/25/c9130a305189/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">本科生转专业管理办法</div><div class="fu">jwc.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://psy.fjnu.edu.cn/zyjs_18617/list.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">心理学院专业介绍（分流规则）</div><div class="fu">psy.fjnu.edu.cn</div></div></a>
+    </div>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">你录的"心理学类"<b>大一下按绩点分流</b>成师范/应用——<b>大一上绩点决定你能不能选到师范方向</b>（国家级一流专业、能考教资）。特殊招生形式录取原则上不能转专业。</div></div>
+  </section>
+
+  <!-- 8 保研 -->
+  <section id="s8" class="card">
+    <div class="sec-head"><div class="sec-ico">🎯</div><h2>保研（推免）</h2><span class="en">Recommendation</span></div>
+    <div class="chips"><span class="chip">绩点前40%</span><span class="chip">四级425+六级380</span><span class="chip">名额≤10%</span></div>
+    <div class="links">
+      <a class="lcard" href="https://jwc.fjnu.edu.cn/32/b1/c9107a209585/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">推免工作实施办法（修订）</div><div class="fu">jwc.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://psy.fjnu.edu.cn/7a/de/c4669a424670/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">心理学院2026接收推免方案</div><div class="fu">psy.fjnu.edu.cn</div></div></a>
+    </div>
+    <div class="under"><span class="tag">🌊 水下（重点）</span><div class="c">① 破格：<b>国家级竞赛前三/B类期刊一作 + 3教授推荐 → 排名放宽前70%且免外语</b>；② Ⅰ类竞赛（互联网+/挑战杯）国赛一等前三名直接认定推免；③ 推免评审中补考重修按60分算；④ 往届保外校（北师大/华师大/西南大学）都<b>大一就进课题组</b>。</div></div>
+  </section>
+
+  <!-- 9 奖学金 -->
+  <section id="s9" class="card">
+    <div class="sec-head"><div class="sec-ico">💰</div><h2>奖学金 & 综测</h2><span class="en">Scholarship</span></div>
+    <div class="chips"><span class="chip">综测=德育20%+智育65%+体美劳15%</span></div>
+    <div class="links">
+      <a class="lcard" href="https://stu.fjnu.edu.cn/cc/1e/c6022a314398/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">学生综合素质测评规定</div><div class="fu">stu.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://stuportal.fjnu.edu.cn/main.html" target="_blank"><div class="doc">🖥️</div><div><div class="fn">智慧学工平台（申报入口）</div><div class="fu">stuportal.fjnu.edu.cn</div></div></a>
+    </div>
+    <table>
+      <tr><th>奖学金</th><th>金额</th><th>条件</th></tr>
+      <tr><td>国家奖学金</td><td>1万/年</td><td>前10%+无补考+实践创新突出</td></tr>
+      <tr><td>国家励志</td><td>6千/年</td><td>困难认定+前30%</td></tr>
+      <tr><td>校长特别奖</td><td>1万/年</td><td>全校10人+A类论文/国家级竞赛二等</td></tr>
+      <tr><td>一二三等</td><td>2000/1000/500</td><td>学业前10%/20%/35%</td></tr>
+    </table>
+    <div class="under"><span class="tag">🌊 水下</span><div class="c">必修/限选不及格重修、受处分、两次通报批评→<b>取消当年评奖资格</b>；志愿时长只认「志愿汇」；师范专业奖学金要分流到师范方向才有。</div></div>
+  </section>
+
+  <!-- 10 竞赛证书 -->
+  <section id="s10" class="card">
+    <div class="sec-head"><div class="sec-ico">🏆</div><h2>竞赛 & 证书</h2><span class="en">Competition</span></div>
+    <div class="links">
+      <a class="lcard" href="https://jsjyxy.fjnu.edu.cn/82/96/c16021a361110/page.htm" target="_blank"><div class="doc">📄</div><div><div class="fn">高水平创新创业竞赛奖励办法</div><div class="fu">jsjyxy.fjnu.edu.cn</div></div></a>
+    </div>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c">Ⅰ类竞赛=互联网+/挑战杯（国赛一等前三=直接推免，金奖5万）。专业对口：心理咨询技能大赛（学院拿过全省本科组第一）、心理辅导课教学竞赛。</div></div>
+    <div class="pit"><span class="tag">🕳️ 坑</span><div class="c">2017年起国家已<b>取消心理咨询师统考</b>，中科院证书2024停发——别交"给钱就过"的智商税；大学阶段有用的是<b>心理健康教育教资+四六级+SPSS统计</b>。</div></div>
+  </section>
+
+  <!-- 11 实验室导师 -->
+  <section id="s11" class="card">
+    <div class="sec-head"><div class="sec-ico">🔬</div><h2>实验室 & 导师</h2><span class="en">Research</span></div>
+    <div class="links">
+      <a class="lcard" href="https://psy.fjnu.edu.cn/xlxsyzx/list.htm" target="_blank"><div class="doc">🔬</div><div><div class="fn">心理学实验中心</div><div class="fu">psy.fjnu.edu.cn/xlxsyzx</div></div></a>
+      <a class="lcard" href="https://psy.fjnu.edu.cn/4676/list.htm" target="_blank"><div class="doc">👤</div><div><div class="fn">导师简介（全部研究方向）</div><div class="fu">psy.fjnu.edu.cn/4676</div></div></a>
+      <a class="lcard" href="https://psy.fjnu.edu.cn/81/a2/c9726a360866/page.htm" target="_blank"><div class="doc">🥇</div><div><div class="fn">国家级一流专业巡览</div><div class="fu">psy.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://psy.fjnu.edu.cn/66/79/c4666a419449/page.htm" target="_blank"><div class="doc">🎉</div><div><div class="fn">2025届升学喜讯</div><div class="fu">psy.fjnu.edu.cn</div></div></a>
+    </div>
+    <div class="under"><span class="tag">🌊 水下 · 导师对号入座</span><div class="c">想走<b>发展教育/心理健康</b>（最热推免方向）→ 连榕、孟迎芳（院长）、叶一舵、林荣茂；想走<b>认知/神经</b>→ 陈幼贞、陈黎静、张锦坤。进组靠<b>主动</b>，开学前一两周发邮件。</div></div>
+  </section>
+
+  <!-- 12-16 其余 -->
+  <section id="s12" class="card">
+    <div class="sec-head"><div class="sec-ico">📚</div><h2>图书馆 / 财务处 / 网络中心 / 就业 / 信息公开</h2><span class="en">More</span></div>
+    <div class="links">
+      <a class="lcard" href="https://library.fjnu.edu.cn" target="_blank"><div class="doc">📚</div><div><div class="fn">图书馆</div><div class="fu">library.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://library.fjnu.edu.cn/69/37/c3645a92471/page.htm" target="_blank"><div class="doc">❓</div><div><div class="fn">图书馆FAQ（开馆/预约）</div><div class="fu">library.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="http://cwc.fjnu.edu.cn/" target="_blank"><div class="doc">💳</div><div><div class="fn">财务处（缴费平台）</div><div class="fu">cwc.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://xxhb.fjnu.edu.cn/" target="_blank"><div class="doc">🌐</div><div><div class="fn">信息化建设与管理办公室</div><div class="fu">xxhb.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://stujy.fjnu.edu.cn/" target="_blank"><div class="doc">💼</div><div><div class="fn">就业信息网</div><div class="fu">stujy.fjnu.edu.cn</div></div></a>
+      <a class="lcard" href="https://www.fjnu.edu.cn/" target="_blank"><div class="doc">⚖️</div><div><div class="fn">学校官网（信息公开）</div><div class="fu">www.fjnu.edu.cn</div></div></a>
+    </div>
+    <div class="ai"><span class="tag">🤖 AI解读</span><div class="c">图书馆座位<b>学习通</b>预约、每周违约2次停约；edu邮箱开学就开通（联系导师/报竞赛的正式身份）；校园网办理以网络中心最新公告为准。</div></div>
+  </section>
+
+  <!-- 17 优秀学生 -->
+  <section id="s17" class="card">
+    <div class="sec-head"><div class="sec-ico">⭐</div><h2>往届优秀学生画像</h2><span class="en">Role Models</span></div>
+    <table>
+      <tr><th>人物</th><th>去向</th><th>关键履历</th></tr>
+      <tr><td><b>丁楠</b></td><td>推免 华南师大 应用心理</td><td>绩点3.97、挑战杯省银、9校面试6offer</td></tr>
+      <tr><td><b>张柔婷</b></td><td>推免 北师大 心理健康教育</td><td>绩点3.90、互联网+国金、共同一作论文（大一3.03逆袭）</td></tr>
+      <tr><td><b>李林倩</b></td><td>推免 首都师大 发展与教育</td><td>国奖、2篇SSCI、挑战杯省银、大一进课题组</td></tr>
+      <tr><td><b>陈怡静</b></td><td>推免 福师大 心理健康教育</td><td>2项大创结项、校心理健康指导中心咨询师助理</td></tr>
+    </table>
+    <div class="ai"><span class="tag">🤖 共同配方</span><div class="c">绩点前10% + 六级 + <b>大创/论文</b> + <b>挑战杯/互联网+</b> + 学生干部 + 方向扎堆"发展教育/心理健康教育"。<b>一定要参加夏令营</b>。</div></div>
+  </section>
+
+  <!-- 17.5 真实口碑 -->
+  <section id="s20" class="card">
+    <div class="sec-head"><div class="sec-ico">🗣️</div><h2>学生真实口碑（小红书/B站/校友评价汇总）</h2><span class="en">Word of Mouth</span></div>
+    <table>
+      <tr><th>方面</th><th>真实反馈（来源）</th></tr>
+      <tr><td><b>食堂</b></td><td>"福建吃饭大学"名副其实——校内连锁店很多：KFC、麦当劳、瑞幸、库迪、蜜雪冰城、益禾堂、茶百道、沪上阿姨、7-11、小森等；一荤一素7-10元</td></tr>
+      <tr><td><b>宿舍</b></td><td>独卫+空调+24h不断电不断水不断网（公认强项）；但"学生多宿舍少，有点挤"，大一5-6人间</td></tr>
+      <tr><td><b>水电</b></td><td>"福建停水停电就不停课大学"——<b>大一间歇性停水停电</b>（水管爆常见），老生已习惯</td></tr>
+      <tr><td><b>交通</b></td><td>校内<b>电动车巨多、超级堵</b>（福州特色）；旗山离市区远，地铁约30分钟</td></tr>
+      <tr><td><b>心理学专业</b></td><td>"啥都学啥都不精，<b>但现已分流改善</b>"；"实习排大四上，影响考研"（往届最大吐槽）</td></tr>
+      <tr><td><b>科研氛围</b></td><td>"学生比较卷，但学术气息不够浓，本科生发论文难（一届一两个）"——<b>想发论文必须主动进课题组</b></td></tr>
+      <tr><td><b>师资</b></td><td>"专业课老师参差不齐，主要靠自学"（个体差异大，选课要打听口碑）</td></tr>
+      <tr><td><b>校园风气</b></td><td>"形式主义比较多"（部分校友评价）；校风学风省内公认好，早晚读书氛围浓</td></tr>
+      <tr><td><b>辅导员</b></td><td>个体差异大，"有的跟毕业生交流太少"（选课/保研/就业信息要主动问）</td></tr>
+    </table>
+    <div class="under"><span class="tag">🌊 综合结论</span><div class="c">硬件（食堂/宿舍/图书馆）是公认强项；槽点集中在<b>停水停电、电动车堵、形式主义、部分老师水</b>。对心理学新生的启示：<b>专业方向靠分流+主动选，科研靠主动进组，信息靠主动问学长学姐</b>——别被动等。</div></div>
+  </section>
+
+  <!-- 18 问答 -->
+  <section id="s18" class="card">
+    <div class="sec-head"><div class="sec-ico">💬</div><h2>新生问答</h2><span class="en">Q&A</span></div>
+    <div class="chat">
+      <div class="msg"><div class="ava">🙋</div><div class="bub">大一想保研早吗？</div></div>
+      <div class="msg q"><div class="bub">不早。保研要前40%绩点，大一第一门课就计入。大一进课题组、报大创、打竞赛，都是为保研铺路。</div><div class="ava">🧠</div></div>
+      <div class="msg"><div class="ava">🙋</div><div class="bub">需要提前学什么？</div></div>
+      <div class="msg q"><div class="bub">① 读《心理学与生活》入门；② 学 SPSS/R（统计是命门）；③ 了解 E-Prime（做实验用）。</div><div class="ava">🧠</div></div>
+      <div class="msg"><div class="ava">🙋</div><div class="bub">什么时候进导师课题组？</div></div>
+      <div class="msg q"><div class="bub">越早越好，大一上就联系。开学前一两周发邮件：自我介绍+兴趣方向+读过TA的论文。</div><div class="ava">🧠</div></div>
+    </div>
+  </section>
+
+  <!-- 19 避坑 -->
+  <section id="s19" class="card">
+    <div class="sec-head"><div class="sec-ico">🕳️</div><h2>避坑总表</h2><span class="en">Avoid</span></div>
+    <table>
+      <tr><th>坑</th><th>怎么防</th></tr>
+      <tr><td>花钱选床位/楼栋</td><td>宿舍学院统一分，收钱全是骗子</td></tr>
+      <tr><td>上门推销被子/电话卡/网课</td><td>一律拒绝，校园卡学校统一办</td></tr>
+      <tr><td>新生群刷单/培训/学车</td><td>缴费只走学校平台，绝不转私人</td></tr>
+      <tr><td>大功率电器</td><td>限800W，查到没收+处分+取消评优</td></tr>
+      <tr><td>旷课</td><td>一学期累计60学时=开除学籍</td></tr>
+      <tr><td>挂科</td><td>缺课1/3禁考；补考后仍挂&gt;1/3预警</td></tr>
+      <tr><td>体测不达标</td><td>结业，拿不到毕业证</td></tr>
+      <tr><td>野鸡证书</td><td>2017年取消心理咨询师统考</td></tr>
+      <tr><td>忘了注册志愿汇</td><td>综测志愿时长只认志愿汇</td></tr>
+      <tr><td>教材买全新</td><td>收二手，省几百块</td></tr>
+    </table>
+  </section>
+
+  <p class="footnote">本指南由 WorkBuddy 联网查证整理（2026-08），数据均引自学校官方文件/官网原文；"水下信息"为对原文条款的解读与通用经验，已标注依据，非官方结论。<br>主要来源：招生网 zsb.fjnu.edu.cn · 教务处 jwc.fjnu.edu.cn · 学工部 stu.fjnu.edu.cn · 心理学院 psy.fjnu.edu.cn · 图书馆 · 财务处 · 网络中心</p>
+
+  </div>
+
+  <button class="backhome" id="BackHome">← 返回作品集</button>
+  <script>
+    (function(){
+      var bh=document.getElementById('BackHome');
+      bh.onclick=function(){
+        if(window.history.length>1){ window.history.back(); }
+        else{ window.location.href='./index.html'; }
+      };
+    })();
+  </script>
+</body>
+</html>
